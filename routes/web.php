@@ -17,5 +17,6 @@ use App\Http\Controllers\FrontendController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/{insert}', [FrontendController::class, "insert"]);
-Route::get('/', [FrontendController::class, "contact"]);
+Route::get('/', [FrontendController::class, "home"]);
+Route::get('/contact', [FrontendController::class, "contact"]);
+Route::get('/messages', [FrontendController::class, "messages"]);

@@ -11,7 +11,12 @@ class FrontendController extends Controller
         return view('insert', compact('name'));
     }
     public function contact(Request $request){
-        // $name = $request-> insert;
         return view('contact');
+    }
+    public function home(Request $request){
+        return view('home');
+    }
+    public function messages(Request $request){
+        return view('messages');
     }
 }

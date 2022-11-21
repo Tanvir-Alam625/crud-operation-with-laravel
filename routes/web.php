@@ -19,4 +19,5 @@ use App\Http\Controllers\FrontendController;
 // });
 Route::get('/', [FrontendController::class, "home"]);
 Route::get('/contact', [FrontendController::class, "contact"]);
+Route::post('/insert', [FrontendController::class, "storeMessage"]);
 Route::get('/messages', [FrontendController::class, "messages"]);

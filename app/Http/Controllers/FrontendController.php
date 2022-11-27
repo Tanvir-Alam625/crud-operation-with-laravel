@@ -36,4 +36,23 @@ class FrontendController extends Controller
         $messages = Messages::latest()->get();
         return view('messages', compact('messages'));
     }
+    public function update($id){
+        $message =  Messages::where('id', $id)->get();
+        return view('editMessage', compact('message'));
+    }
+    public function updateData(Request $request){
+        $request->validate([
+            "*"=> "required"
+        ]);
+        Messages::where('id', $request->id)->update([
+            "name" => $request -> name,
+            "email" => $request -> email,
+            "message" => $request -> message
+        ]);
+        return redirect('/messages');
+    }
+    public function deleteMessage($id){
+        Messages::where('id', $id)->delete();
+        return back();
+    }
 }
